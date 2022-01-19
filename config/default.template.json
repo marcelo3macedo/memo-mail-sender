@@ -13,5 +13,10 @@
                 "active": true
             }
         ] 
-    }        
+    },
+    "cache": {
+        "connectionString": "redis://localhost:6379",
+        "expireTimeInSeconds": 600,
+        "hashKey": "mail-sender"
+    }      
 }

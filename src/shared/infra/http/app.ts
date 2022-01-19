@@ -6,9 +6,13 @@ import { Cron } from './cron'
 
 import '@shared/infra/typeorm';
 import '@shared/container';
+import CacheManager from 'lib/CacheManager';
 
 const app = express()
 
+CacheManager.connect()
+
 Cron.scheduler()
+
 
 export { app };
