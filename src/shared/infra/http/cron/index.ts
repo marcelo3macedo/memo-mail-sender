@@ -7,7 +7,7 @@ const tasks = new Tasks()
 
 class Cron {
     static  scheduler() {
-        cronConfig.feedDecks.map(c => {
+        cronConfig.tasks.map(c => {
             let task = tasks.get(c.name)
 
             if (!task) {

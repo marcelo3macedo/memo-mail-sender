@@ -2,11 +2,14 @@ import { IMailProvider } from "../IMailProvider";
 import SibApiV3Sdk from "sib-api-v3-sdk";
 import mail from "@config/mail";
 import MailManager from "lib/MailManager";
+import logger from "@config/logger";
 
 class MailProvider implements IMailProvider {
     async send({ type, destination, destinationName, params }):Promise<boolean> {
         return new Promise((resolve, reject) => {
             try {
+                logger.info(`[MailProvider] Send Mail to: ${destination}`)
+
                 const defaultClient = SibApiV3Sdk.ApiClient.instance;
                 let apiKey = defaultClient.authentications['api-key'];
                 apiKey.apiKey = mail.apiKey;
@@ -30,12 +33,14 @@ class MailProvider implements IMailProvider {
                 ];
                 
                 apiInstance.sendTransacEmail(sendSmtpEmail).then(function(data) {
+                    logger.info(`[MailProvider] Success: ${destination}`)
                     resolve(true)
                 }, function(error) {
-                    console.log(error)
+                    logger.error(`[MailProvider] Failed: ${destination} - ${error}`)
                     resolve(false)
                 });
-            } catch {
+            } catch (error) {
+                logger.error(`[MailProvider] Failed: ${destination} - ${error}`)
                 reject(false);
             }
         })

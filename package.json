@@ -38,6 +38,7 @@
     "sib-api-v3-sdk": "^8.2.1",
     "ts-node-dev": "^1.1.8",
     "tsyringe": "^4.6.0",
-    "typeorm": "^0.2.41"
+    "typeorm": "^0.2.41",
+    "winston": "^3.4.0"
   }
 }
