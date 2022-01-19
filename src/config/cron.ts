@@ -1,7 +1,7 @@
 const Resource = require('config')
 
 export default {
-    feedDecks: getProperty('cron.tasks', null)
+    tasks: getProperty('cron.tasks', null)
 };
 
 function getProperty (name='', fallback = null) {
