@@ -63,8 +63,7 @@ The use of spaced repetition has been proven to increase rate of learning.
 
 Read more: https://en.wikipedia.org/wiki/Spaced_repetition
 
-This service has a functionality to schedule the next sessions that will be carried out by the users. To elaborate the content of the session, it uses the responses of the sessions performed by the user as a basis, thus being able to select which cards should be prioritized for the memorization of the content.
-
+This service has a functionality to manage notification by mail to the users. The communication with this service is possible using a messaging software (RabbitMQ).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
