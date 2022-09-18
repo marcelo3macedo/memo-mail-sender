@@ -1,7 +1,7 @@
 const Resource = require('config')
 
 export default {
-    tasks: getProperty('cron.tasks', null)
+    tasks: getProperty('cron.tasks', [])
 };
 
 function getProperty (name='', fallback = null) {

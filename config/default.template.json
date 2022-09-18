@@ -1,10 +1,4 @@
 {
-    "mail": {
-        "activationSubject": "Ativação de Cadastro - Memorizator",
-        "senderName": "Memorizator",
-        "senderEmail": "contato@memorizator.com.br",
-        "apiKey": "sendBlue_apikey"
-    },    
     "cron": {
         "tasks": [
             {
@@ -13,10 +7,5 @@
                 "active": true
             }
         ] 
-    },
-    "cache": {
-        "connectionString": "redis://localhost:6379",
-        "expireTimeInSeconds": 600,
-        "hashKey": "mail-sender"
     }      
 }

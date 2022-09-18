@@ -1,13 +1,7 @@
-const Resource = require('config')
-
 export default {
-    apiKey: getProperty('mail.apiKey', null),
-    sender_name: getProperty('mail.senderName', null),
-    sender_email: getProperty('mail.senderEmail', null),
-    activationSubject: getProperty('mail.activationSubject', null),
-    appLogo: getProperty('mail.appLogo', null)
-};
-
-function getProperty (name='', fallback = null) {
-    return Resource.has(name) ? Resource.get(name) : fallback
+    apiKey: process.env.MAIL_APIKEY,
+    sender_name: process.env.MAIL_SENDERNAME,
+    sender_email: process.env.MAIL_SENDERMAIL,
+    activationSubject: process.env.MAIL_ACTIVATIONSUBJECT,
+    appLogo: process.env.MAIL_APPLOGO
 }
