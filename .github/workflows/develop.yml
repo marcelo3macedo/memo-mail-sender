@@ -22,33 +22,7 @@ jobs:
         run: yarn
         
       - name: build
-        run: |
-          echo 'APP_NAME=${{ secrets.APP_NAME }} >> .env
-          echo 'APP_PORT=${{ secrets.APP_PORT }} >> .env
-          echo 'MAIL_ACTIVATIONSUBJECT=${{ secrets.MAIL_ACTIVATIONSUBJECT }}  >> .env
-          echo 'MAIL_SENDERNAME=${{ secrets.MAIL_SENDERNAME }} >> .env
-          echo 'MAIL_SENDERMAIL=${{ secrets.MAIL_SENDERMAIL }} >> .env
-          echo 'MAIL_APIKEY=${{ secrets.MAIL_APIKEY }} >> .env
-          echo 'MAIL_APPLOGO=${{ secrets.MAIL_APPLOGO }} >> .env
-          echo 'CACHE_CONNECTIONSTRING=${{ secrets.CACHE_CONNECTIONSTRING }} >> .env
-          echo 'CACHE_EXPIRETIMEINSECONDS=${{ secrets.CACHE_EXPIRETIMEINSECONDS }} >> .env 
-          echo 'CACHE_HASHKEY=${{ secrets.CACHE_HASHKEY }} >> .env
-          echo 'TYPEORM_TYPE=${{ secrets.TYPEORM_TYPE }} >> .env
-          echo 'TYPEORM_HOST=${{ secrets.TYPEORM_HOST }} >> .env
-          echo 'TYPEORM_PORT=${{ secrets.TYPEORM_PORT }} >> .env
-          echo 'TYPEORM_USERNAME=${{ secrets.TYPEORM_USERNAME }} >> .env
-          echo 'TYPEORM_PASSWORD=${{ secrets.TYPEORM_PASSWORD }} >> .env
-          echo 'TYPEORM_DATABASE=${{ secrets.TYPEORM_DATABASE }} >> .env
-          echo 'TYPEORM_ENTITIES=${{ secrets.TYPEORM_ENTITIES }} >> .env
-          echo 'TYPEORM_MIGRATIONS=${{ secrets.TYPEORM_MIGRATIONS }} >> .env
-          echo 'TYPEORM_CLI_MIGRATIONSDIR=${{ secrets.TYPEORM_CLI_MIGRATIONSDIR }} >> .env
-          echo 'TYPEORM_CACHE_TYPE=${{ secrets.TYPEORM_CACHE_TYPE }} >> .env
-          echo 'TYPEORM_CACHE_OPTIONS_HOST=${{ secrets.TYPEORM_CACHE_OPTIONS_HOST }} >> .env
-          echo 'TYPEORM_CACHE_OPTIONS_PORT=${{ secrets.TYPEORM_CACHE_OPTIONS_PORT }} >> .env
-          echo 'GRAYLOG_LEVEL=${{ secrets.GRAYLOG_LEVEL }} >> .env
-          echo 'GRAYLOG_HOST=${{ secrets.GRAYLOG_HOST }} >> .env
-          echo 'GRAYLOG_PORT=${{ secrets.GRAYLOG_PORT }} >> .env
-          echo 'GRAYLOG_STREAM=${{ secrets.GRAYLOG_STREAM }} >> .env
+        run: yarn build
         
       - uses: appleboy/scp-action@master
         with:
