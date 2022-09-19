@@ -20,42 +20,36 @@ jobs:
       
       - name: Install Dependencies
         run: yarn
-
-      - name: Make envfile
-         uses: SpicyPizza/create-envfile@v1.3
-         with:
-          APP_NAME: ${{ secrets.APP_NAME }}
-          APP_PORT: ${{ secrets.APP_PORT }}
-          MAIL_ACTIVATIONSUBJECT: ${{ secrets.MAIL_ACTIVATIONSUBJECT }}
-          MAIL_SENDERNAME: ${{ secrets.MAIL_SENDERNAME }}
-          MAIL_SENDERMAIL: ${{ secrets.MAIL_SENDERMAIL }}
-          MAIL_APIKEY: ${{ secrets.MAIL_APIKEY }}
-          MAIL_APPLOGO: ${{ secrets.MAIL_APPLOGO }}
-          CACHE_CONNECTIONSTRING: ${{ secrets.CACHE_CONNECTIONSTRING }}
-          CACHE_EXPIRETIMEINSECONDS: ${{ secrets.CACHE_EXPIRETIMEINSECONDS }}
-          CACHE_HASHKEY: ${{ secrets.CACHE_HASHKEY }}
-          TYPEORM_TYPE: ${{ secrets.TYPEORM_TYPE }}
-          TYPEORM_HOST: ${{ secrets.TYPEORM_HOST }}
-          TYPEORM_PORT: ${{ secrets.TYPEORM_PORT }}
-          TYPEORM_USERNAME: ${{ secrets.TYPEORM_USERNAME }}
-          TYPEORM_PASSWORD: ${{ secrets.TYPEORM_PASSWORD }}
-          TYPEORM_DATABASE: ${{ secrets.TYPEORM_DATABASE }}
-          TYPEORM_ENTITIES: ${{ secrets.TYPEORM_ENTITIES }}
-          TYPEORM_MIGRATIONS: ${{ secrets.TYPEORM_MIGRATIONS }}
-          TYPEORM_CLI_MIGRATIONSDIR: ${{ secrets.TYPEORM_CLI_MIGRATIONSDIR }}
-          TYPEORM_CACHE_TYPE: ${{ secrets.TYPEORM_CACHE_TYPE }}
-          TYPEORM_CACHE_OPTIONS_HOST: ${{ secrets.TYPEORM_CACHE_OPTIONS_HOST }}
-          TYPEORM_CACHE_OPTIONS_PORT: ${{ secrets.TYPEORM_CACHE_OPTIONS_PORT }}
-          GRAYLOG_LEVEL: ${{ secrets.GRAYLOG_LEVEL }}
-          GRAYLOG_HOST: ${{ secrets.GRAYLOG_HOST }}
-          GRAYLOG_PORT: ${{ secrets.GRAYLOG_PORT }}
-          GRAYLOG_STREAM: ${{ secrets.GRAYLOG_STREAM }}
-          file_name: .env
-          fail_on_empty: false
-       - uses: actions/checkout@v3
         
       - name: build
         run: yarn build
+        env:
+          envkey_APP_NAME: ${{ secrets.APP_NAME }}
+          envkey_APP_PORT: ${{ secrets.APP_PORT }}
+          envkey_MAIL_ACTIVATIONSUBJECT: ${{ secrets.MAIL_ACTIVATIONSUBJECT }}
+          envkey_MAIL_SENDERNAME: ${{ secrets.MAIL_SENDERNAME }}
+          envkey_MAIL_SENDERMAIL: ${{ secrets.MAIL_SENDERMAIL }}
+          envkey_MAIL_APIKEY: ${{ secrets.MAIL_APIKEY }}
+          envkey_MAIL_APPLOGO: ${{ secrets.MAIL_APPLOGO }}
+          envkey_CACHE_CONNECTIONSTRING: ${{ secrets.CACHE_CONNECTIONSTRING }}
+          envkey_CACHE_EXPIRETIMEINSECONDS: ${{ secrets.CACHE_EXPIRETIMEINSECONDS }}
+          envkey_CACHE_HASHKEY: ${{ secrets.CACHE_HASHKEY }}
+          envkey_TYPEORM_TYPE: ${{ secrets.TYPEORM_TYPE }}
+          envkey_TYPEORM_HOST: ${{ secrets.TYPEORM_HOST }}
+          envkey_TYPEORM_PORT: ${{ secrets.TYPEORM_PORT }}
+          envkey_TYPEORM_USERNAME: ${{ secrets.TYPEORM_USERNAME }}
+          envkey_TYPEORM_PASSWORD: ${{ secrets.TYPEORM_PASSWORD }}
+          envkey_TYPEORM_DATABASE: ${{ secrets.TYPEORM_DATABASE }}
+          envkey_TYPEORM_ENTITIES: ${{ secrets.TYPEORM_ENTITIES }}
+          envkey_TYPEORM_MIGRATIONS: ${{ secrets.TYPEORM_MIGRATIONS }}
+          envkey_TYPEORM_CLI_MIGRATIONSDIR: ${{ secrets.TYPEORM_CLI_MIGRATIONSDIR }}
+          envkey_TYPEORM_CACHE_TYPE: ${{ secrets.TYPEORM_CACHE_TYPE }}
+          envkey_TYPEORM_CACHE_OPTIONS_HOST: ${{ secrets.TYPEORM_CACHE_OPTIONS_HOST }}
+          envkey_TYPEORM_CACHE_OPTIONS_PORT: ${{ secrets.TYPEORM_CACHE_OPTIONS_PORT }}
+          envkey_GRAYLOG_LEVEL: ${{ secrets.GRAYLOG_LEVEL }}
+          envkey_GRAYLOG_HOST: ${{ secrets.GRAYLOG_HOST }}
+          envkey_GRAYLOG_PORT: ${{ secrets.GRAYLOG_PORT }}
+          envkey_GRAYLOG_STREAM: ${{ secrets.GRAYLOG_STREAM }}
         
       - uses: appleboy/scp-action@master
         with:
