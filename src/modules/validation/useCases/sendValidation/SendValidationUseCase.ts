@@ -1,7 +1,7 @@
-import logger from '@config/logger';
 import IMailSchedulerRepository from '@modules/validation/repositories/IMailSchedulerRepository';
 import { IMailProvider } from '@shared/container/providers/MailProvider/IMailProvider';
-import CacheManager from 'lib/CacheManager';
+import CacheManager from '@lib/CacheManager';
+import logger from '@lib/LogManager';
 import { inject, injectable } from 'tsyringe';
 
 @injectable()
@@ -24,7 +24,7 @@ export class SendValidationUseCase {
 
     logger.info(`[SendValidationUseCase] Mails in Queue: ${mails.length}`)
 
-    mails.map(async m => {
+    mails.forEach(async m => {
       const success = await this.mailProvider.send(m)
 
       if (success) {
