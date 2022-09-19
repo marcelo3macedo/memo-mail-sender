@@ -1,5 +1,3 @@
-const Resource = require('config')
-
 export default {
     connectionString: process.env.CACHE_CONNECTIONSTRING,
     expireTimeInSeconds: parseInt(process.env.CACHE_EXPIRETIMEINSECONDS || "0"),

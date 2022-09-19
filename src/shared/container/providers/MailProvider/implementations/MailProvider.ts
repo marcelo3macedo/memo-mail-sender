@@ -1,8 +1,8 @@
 import { IMailProvider } from "../IMailProvider";
 import SibApiV3Sdk from "sib-api-v3-sdk";
 import mail from "@config/mail";
-import MailManager from "lib/MailManager";
-import logger from "@config/logger";
+import MailManager from "@lib/MailManager";
+import logger from "@lib/LogManager";
 
 class MailProvider implements IMailProvider {
     async send({ type, destination, destinationName, params }):Promise<boolean> {
