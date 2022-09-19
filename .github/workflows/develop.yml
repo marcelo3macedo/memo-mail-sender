@@ -22,8 +22,8 @@ jobs:
         run: yarn
 
       - name: Make envfile
-         uses: SpicyPizza/create-envfile@v1.3
-         with:
+        uses: SpicyPizza/create-envfile@v1.3
+        with:
           APP_NAME: ${{ secrets.APP_NAME }}
           APP_PORT: ${{ secrets.APP_PORT }}
           MAIL_ACTIVATIONSUBJECT: ${{ secrets.MAIL_ACTIVATIONSUBJECT }}
@@ -52,7 +52,6 @@ jobs:
           GRAYLOG_STREAM: ${{ secrets.GRAYLOG_STREAM }}
           file_name: .env
           fail_on_empty: false
-       - uses: actions/checkout@v3
         
       - name: build
         run: yarn build
