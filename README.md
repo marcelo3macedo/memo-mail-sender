@@ -123,6 +123,34 @@ _Below is an example of how you can instruct your audience on installing and set
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
+### Sending an mail
+
+You can send a mail publishing a message in RabbitMQ queue.
+
+- Queue: 
+  mail-validation
+- Message:
+  ```
+    {
+      "type": "new-user",
+      "name": "test",
+      "email": "test@test.com",
+      "params": [
+      { 
+          "key": "{{userName}}",
+          "value": "test"
+      },
+      { 
+          "key": "{{activationLink}}",
+          "value": "https://memorizou.com.br"
+      }
+    ]
+    }
+  ```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
 
 
 <!-- CONTRIBUTING -->
