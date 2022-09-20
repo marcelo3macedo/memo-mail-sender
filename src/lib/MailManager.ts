@@ -20,12 +20,12 @@ function getData(type, params) {
 }
 
 function applyParams(data, params) {
-    globalParameters.map(p => {
+    globalParameters.forEach(p => {
         let re = new RegExp(p.key, "g")
         data = data.replace(re, p.value)    
     })
 
-    params = JSON.parse(params)
+    params = Array.isArray(params) ? params : JSON.parse(params)
     params.map(p => {
         let re = new RegExp(p.key, "g")
         data = data.replace(re, p.value)    
