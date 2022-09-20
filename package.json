@@ -26,6 +26,7 @@
     "@babel/plugin-proposal-decorators": "^7.16.7",
     "@babel/preset-env": "^7.16.8",
     "@babel/preset-typescript": "^7.16.7",
+    "amqplib": "^0.10.3",
     "babel-plugin-module-resolver": "^4.1.0",
     "babel-plugin-transform-typescript-metadata": "^0.3.2",
     "config": "^3.3.6",
@@ -33,6 +34,7 @@
     "express-async-errors": "^3.1.1",
     "fs": "^0.0.1-security",
     "ioredis": "^4.28.3",
+    "mysql": "^2.18.1",
     "node-cron": "^3.0.0",
     "pg": "^8.7.1",
     "reflect-metadata": "^0.1.13",
@@ -40,6 +42,8 @@
     "ts-node-dev": "^1.1.8",
     "tsyringe": "^4.6.0",
     "typeorm": "^0.2.41",
-    "winston": "^3.4.0"
+    "uuid": "^9.0.0",
+    "winston": "^3.4.0",
+    "winston-graylog2": "^2.1.2"
   }
 }

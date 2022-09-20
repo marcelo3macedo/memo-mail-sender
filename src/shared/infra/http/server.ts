@@ -1,6 +1,7 @@
+require("dotenv").config()
+
 import { app } from './app'
-import logger from '@config/logger'
+import logger from '@lib/LogManager'
+import server from '@config/server'
 
-const port = 1313
-
-app.listen(port, () => logger.info(`Server running on port ${port}`))
+app.listen(server.port, () => logger.info(`Server running on port ${server.port}`))
