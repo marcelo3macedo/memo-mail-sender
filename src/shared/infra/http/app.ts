@@ -1,18 +1,12 @@
 
 import 'reflect-metadata';
 import 'express-async-errors';
-import express from 'express'
-import { Cron } from './cron'
-
-import '@shared/infra/typeorm';
+import express from 'express';
 import '@shared/container';
-import CacheManager from '@lib/CacheManager';
+import { Queue } from './queue';
 
 const app = express()
 
-CacheManager.connect()
-
-Cron.scheduler()
-
+Queue.activate()
 
 export { app };

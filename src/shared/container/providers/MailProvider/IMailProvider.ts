@@ -1,7 +1,7 @@
-import MailScheduler from "@modules/validation/entities/MailScheduler";
+import ISendMailDTO from "@modules/validation/dtos/ISendMailDTO";
 
 interface IMailProvider {
-    send(data: MailScheduler):Promise<boolean>;
+    send(data: ISendMailDTO):Promise<boolean>;
 }
 
 export { IMailProvider };
