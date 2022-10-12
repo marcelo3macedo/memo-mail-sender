@@ -1,12 +1,13 @@
 {
-  "name": "scheduler",
+  "name": "mail-sender",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
     "start": "ts-node-dev -r tsconfig-paths/register --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prod": " node dist/shared/infra/http/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"    
   },
   "keywords": [],
   "author": "",

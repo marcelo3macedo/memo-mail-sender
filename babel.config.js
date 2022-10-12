@@ -1,3 +1,6 @@
+const enviroment = process.env.npm_lifecycle_event === 'build' ? 
+    'dist' : 'src'
+
 module.exports = {
     presets: [
         ["@babel/preset-env", { targets: { node: "current"}}],
@@ -8,10 +11,11 @@ module.exports = {
             "module-resolver",
             {
                 alias: {
-                    "@modules": "./src/modules",
-                    "@shared": "./src/shared",
-                    "@config": "./src/config",
-                    "@lib": "./src/lib"
+                    "@constants": `./${enviroment}/constants`,
+                    "@modules": `./${enviroment}/modules`,
+                    "@shared": `./${enviroment}/shared`,
+                    "@config": `./${enviroment}/config`,
+                    "@lib": `./${enviroment}/lib`
                 }
             }
         ],

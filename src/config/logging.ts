@@ -1,3 +1,7 @@
+import VariableManager from "@lib/VariableManager"
+
+VariableManager.load()
+
 export default {
     name: process.env.APP_NAME,
     level: process.env.GRAYLOG_LEVEL,

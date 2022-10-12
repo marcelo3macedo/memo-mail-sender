@@ -1,5 +1,3 @@
-require("dotenv").config()
-
 import { app } from './app'
 import logger from '@lib/LogManager'
 import server from '@config/server'
