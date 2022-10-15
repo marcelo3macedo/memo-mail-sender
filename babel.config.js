@@ -1,5 +1,4 @@
-const enviroment = process.env.npm_lifecycle_event === 'build' ? 
-    'dist' : 'src'
+const enviroment = process.env.npm_lifecycle_event === 'build' ? 'dist' : 'src'
 
 module.exports = {
     presets: [
