@@ -23,7 +23,9 @@ export default class QueueManager {
   }
 
   async consume(queue: string, callback: (message: Message) => void) {
-    this.channel.assertQueue(queue)
+    this.channel.assertQueue(queue, {
+      durable: false
+    });
     
     return this.channel.consume(queue, (message) => {
       callback(message);
