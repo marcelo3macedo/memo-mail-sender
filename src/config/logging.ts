@@ -1,3 +1,5 @@
+import "@lib/VariableManager";
+
 export default {
     name: process.env.APP_NAME,
     level: process.env.GRAYLOG_LEVEL,

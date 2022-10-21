@@ -7,6 +7,7 @@
     "strictPropertyInitialization": false,
     "baseUrl": "./src",
     "paths": {
+      "@constants/*": ["constants/*"],
       "@modules/*": ["modules/*"],
       "@shared/*": ["shared/*"],
       "@config/*": ["config/*"],

@@ -1,3 +1,5 @@
+import "@lib/VariableManager";
+
 export default {
     apiKey: process.env.MAIL_APIKEY,
     sender_name: process.env.MAIL_SENDERNAME,
