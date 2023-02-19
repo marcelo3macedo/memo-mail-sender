@@ -3,7 +3,7 @@ import SibApiV3Sdk from "sib-api-v3-sdk";
 import mail from "@config/mail";
 import MailManager from "@lib/MailManager";
 
-class MailProvider implements IMailProvider {
+class SendInBlueProvider implements IMailProvider {
     async send({ type, email, name, params }):Promise<boolean> {
         const defaultClient = SibApiV3Sdk.ApiClient.instance;
         let apiKey = defaultClient.authentications['api-key'];
@@ -31,4 +31,4 @@ class MailProvider implements IMailProvider {
     }
 }
 
-export { MailProvider };
+export { SendInBlueProvider };

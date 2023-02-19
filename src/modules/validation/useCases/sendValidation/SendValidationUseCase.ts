@@ -5,7 +5,7 @@ import ISendMailDTO from '@modules/validation/dtos/ISendMailDTO';
 @injectable()
 export class SendValidationUseCase {
   constructor(
-    @inject('MailProvider')
+    @inject('SendInBlueProvider')
     private mailProvider: IMailProvider
   ) {}
 
