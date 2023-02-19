@@ -136,15 +136,15 @@ You can send a mail publishing a message in RabbitMQ queue.
       "name": "test",
       "email": "test@test.com",
       "params": [
-      { 
-          "key": "{{userName}}",
-          "value": "test"
-      },
-      { 
-          "key": "{{activationLink}}",
-          "value": "https://memorizou.com.br"
-      }
-    ]
+        { 
+            "key": "{{userName}}",
+            "value": "test"
+        },
+        { 
+            "key": "{{activationLink}}",
+            "value": "https://memorizou.com.br"
+        }
+      ]
     }
   ```
 

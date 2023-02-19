@@ -16,6 +16,12 @@ function getData(type, params) {
         data.subject = mail.activationSubject            
         data.htmlContent = applyParams(fs.readFileSync(path.join(__dirname, '../templates/activation.html'), 'utf8'), params)
     }
+
+    if (type === "recover") {
+        data.subject = mail.recoverSubject            
+        data.htmlContent = applyParams(fs.readFileSync(path.join(__dirname, '../templates/recover.html'), 'utf8'), params)
+    }
+
     return data
 }
 

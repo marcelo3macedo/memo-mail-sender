@@ -1,6 +1,7 @@
 import { IMailProvider } from '@shared/container/providers/MailProvider/IMailProvider';
 import { inject, injectable } from 'tsyringe';
 import ISendMailDTO from '@modules/validation/dtos/ISendMailDTO';
+import logger from '@lib/LogManager';
 
 @injectable()
 export class SendValidationUseCase {
@@ -10,10 +11,18 @@ export class SendValidationUseCase {
   ) {}
 
   async execute(data: ISendMailDTO) {
-    const { type, name, email, params } = data || {};
+    try {
+      const { type, name, email, params } = data || {}
 
-    return this.mailProvider.send({ 
-      type, name, email, params
-    });
+      const mail = await this.mailProvider.send({ 
+        type, name, email, params
+      })
+
+      logger.info("SendValidationUseCase.execute: " + JSON.stringify(data) , data)
+
+      return mail
+    } catch (e) {
+      logger.error("SendValidationUseCase.execute: " + JSON.stringify(data) + JSON.stringify(e))
+    }
   }
 }

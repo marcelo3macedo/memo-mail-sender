@@ -13,7 +13,9 @@ class SendInBlueProvider implements IMailProvider {
         let sendSmtpEmail = new SibApiV3Sdk.SendSmtpEmail();
 
         const { subject, htmlContent } = MailManager.getData(type, params)
-        
+
+        if (!subject || !htmlContent) return
+
         sendSmtpEmail.subject = subject
         sendSmtpEmail.htmlContent = htmlContent
         sendSmtpEmail.sender = { 
